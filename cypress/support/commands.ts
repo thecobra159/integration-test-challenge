@@ -1,6 +1,6 @@
 Cypress.Commands.add("addTodo", (text: string) => {
-  cy.get("[data-testid=todo-input]").type(text);
-  cy.get("[data-testid=add-button]").click();
+  cy.get("[data-testid=todo-input]").type(text, { delay: 50 });
+  cy.get("[data-testid=add-button]").should("not.be.disabled").click();
 });
 
 /* eslint-disable @typescript-eslint/no-namespace */
